@@ -21,7 +21,7 @@ CFLAGS = -Wall -Wextra -Werror
 .PHONY: all clean fclean re
 
 $(NAME): $(OBJ)
-	g++ $(CFLAGS) -o $(NAME) $(OBJ)
+	g++ $(CFLAGS) -o $(NAME) $(OBJ) -Iphonebook.hpp
 
 all: $(NAME)
 

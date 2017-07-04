@@ -16,20 +16,23 @@ int main(void)
 {
 	contact contact;
 	char command[10];
+	char info[13][20] = {"first name: ", "last name: ", "nickname: ", "login: ", 
+	"postal address: ", "email address: ", "phone number: ", "birthday date: ",
+	"favorite meal: ", "underwear color: ", "darkest secret: "};
 	while (1)
 	{
 		std::cout << "Please enter a valid command: ";
-		cin >> command;
-		if (strcmp(command, "EXIT"))
+		std::cin >> command;
+		if (!strcmp(command, "EXIT"))
 			return 0;
-		else if (strcmp(command, "ADD"))
+		else if (!strcmp(command, "ADD"))
 		{
 			std::cout << "Please enter new contact infomation: ";
-			contact.add(i, input);
+			contact.add(info);
 		}
-		else if (strcmp(command, "SEARCH"))
+		else if (!strcmp(command, "SEARCH"))
 		{
-			contact.search(contact.Count_contact);
+			contact.search();
 		}
 	}
 }
