@@ -21,9 +21,7 @@
 class contact{
 
 	public:
-		// const char info[13];
 		static int Count_contact;
-		// contact(void);
 		static int get_Count(){
 			return Count_contact;
 		}
@@ -32,12 +30,7 @@ class contact{
 		void search();
 };
 
-int contact::Count_contact = -1;
-
-// contact::contact(void){
-// 	Count_contact++;
-// 	this->info[13] = 
-// }
+int contact::Count_contact = 0;
 
 std::string array[9][12][255];
 
@@ -51,7 +44,6 @@ void contact::add(char info[13][20])
 	}
 	Count_contact++;
 	return ;
-	// contact.array[contact.Count_contact][12] = '\0';
 }
 
 void contact::search(void)
@@ -61,7 +53,7 @@ void contact::search(void)
 	std::cout << std::setw(10) << "index" << std::setw(10) << "first name" 
 	<< std::setw(10) << "last name" << std::setw(10) << "nickname" << std::endl;
 	for (int i = 0; i < Count_contact; i++){
-		std::cout << std::setw(10) << Count_contact;
+		std::cout << std::setw(10) << i;
 		for (int j = 0; j < 3; j++){
 			if (strlen(array[i][j]) > 8){
 				for (int m = 0; m < 8; m++){
@@ -72,15 +64,19 @@ void contact::search(void)
 			else
 				std::cout << std::setw(9) << array[i][j] << "|";
 		}
+		std::cout << std::endl;
 	}
-	if (Count_contact > -1)
+	if (Count_contact)
 	{
 		std::cout << "\n" << "Which one are you searching for?" << std::endl;
-			std::cin >> input;
+		std::cin >> input;
 		if (strlen(input) > 1 || input[0] > '8' || input[0] < '0' || input[1])
+		{
 			std::cout << "invald choice" << std::endl;
-		for (int i = 0; i < 13; i++){
-			std::cout << array[input[0] - 48 - 1][i] << std::endl;
+			return ;
+		}
+		for (int i = 0; i < 12; i++){
+			std::cout << array[input[0] - 48][i] << std::endl;
 		}
 	}
 	return ;

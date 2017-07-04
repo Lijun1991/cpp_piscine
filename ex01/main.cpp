@@ -21,13 +21,12 @@ int main(void)
 	"favorite meal: ", "underwear color: ", "darkest secret: "};
 	while (1)
 	{
-		std::cout << "Please enter a valid command: ";
 		std::cin >> command;
 		if (!strcmp(command, "EXIT"))
 			return 0;
 		else if (!strcmp(command, "ADD"))
 		{
-			std::cout << "Please enter new contact infomation: ";
+			std::cout << "Please enter new contact infomation: " << std::endl;
 			contact.add(info);
 		}
 		else if (!strcmp(command, "SEARCH"))
