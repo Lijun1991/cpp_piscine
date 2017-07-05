@@ -26,8 +26,11 @@ int main(void)
 			return 0;
 		else if (!strcmp(command, "ADD"))
 		{
-			std::cout << "Please enter new contact infomation: " << std::endl;
-			contact.add(info);
+			if (contact::Count_contact <= 7)
+			{
+				std::cout << "Please enter new contact infomation: " << std::endl;
+				contact.add(info);
+			}
 		}
 		else if (!strcmp(command, "SEARCH"))
 		{
