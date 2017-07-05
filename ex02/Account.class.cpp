@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <ctime>
 #include "Account.class.hpp"
 
 Account::Account(int initial_deposit){
@@ -104,5 +105,7 @@ void Account::displayStatus(void)const{
 }
 
 void Account::_displayTimestamp(void){
-	std::cout << "[this_is_a_timestamps] ";
+	time_t now = time(0);
+	char* dt = ctime(&now);
+	std::cout << "[" << dt << "]";
 }
