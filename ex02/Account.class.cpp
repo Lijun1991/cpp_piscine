@@ -106,6 +106,7 @@ void Account::displayStatus(void)const{
 
 void Account::_displayTimestamp(void){
 	time_t now = time(0);
-	char* dt = ctime(&now);
-	std::cout << "[" << dt << "]";
+	tm *Tm = localtime(&now);
+	std::cout << "[" << Tm->tm_year + 1900 << Tm->tm_mon << Tm->tm_mday 
+	<< "_" << Tm->tm_hour << Tm->tm_min << Tm->tm_sec << "] ";
 }
