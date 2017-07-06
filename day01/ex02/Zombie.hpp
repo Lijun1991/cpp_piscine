@@ -24,4 +24,7 @@ class Zombie {
 		void announce();
 };
 
+void randomChump(int type);
+std::string generate_random(int max);
+
 #endif

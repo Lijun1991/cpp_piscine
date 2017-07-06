@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/05 12:33:42 by lwang             #+#    #+#             */
-/*   Updated: 2017/07/05 12:33:44 by lwang            ###   ########.fr       */
+/*   Created: 2017/07/05 19:01:45 by lwang             #+#    #+#             */
+/*   Updated: 2017/07/05 19:01:47 by lwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-#define ZOMBIEEVENT_HPP
-
-#include "Zombie.hpp"
 #include <iostream>
 
-class ZombieEvent {
-	public:
-		std::string new_type;
-		void setZombieType(std::string set_type);
-		Zombie* newZombie(std::string name);
-};
+char str[17] = "HI THIS IS BRAIN";
 
-#endif
+char& show(int i){
+	return (str[i]);
+}
+
+int main(void)
+{
+	char *s = str;
+
+	for (int i = 0; i < 17; i++){
+		std::cout << s[i];
+	}
+	std::cout << std::endl;
+
+	for (int i = 0; i < 17; i++){
+		std::cout << show(i);
+	}
+	std::cout << std::endl;
+	
+	return 0;
+}

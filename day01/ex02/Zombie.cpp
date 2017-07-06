@@ -14,13 +14,11 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie(std::string name){
-	std::string type ("walker");
-	// std::cout << type << std::endl;
-	std::string new_name (name);
-	// std::cout << new_name << std::endl;
+	this->type = "walker";
+	this->new_name = name ;
 }
 
 void	Zombie::announce(void){
-	std::cout << "<" << new_name << "(" << type << ")> Braiiiiiiinnnssss..." 
+	std::cout << "<" << this->new_name << "(" << this->type << ")> Braiiiiiiinnnssss..." 
 	<< std::endl;
 }

@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/05 12:33:42 by lwang             #+#    #+#             */
-/*   Updated: 2017/07/05 12:33:44 by lwang            ###   ########.fr       */
+/*   Created: 2017/07/05 18:47:22 by lwang             #+#    #+#             */
+/*   Updated: 2017/07/05 18:47:24 by lwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-#define ZOMBIEEVENT_HPP
+#ifndef ZOMBIEHORDE_HPP
+#define ZOMBIEHORDE_HPP
 
-#include "Zombie.hpp"
 #include <iostream>
+#include "Zombie.hpp"
 
-class ZombieEvent {
+class ZombieHorde {
 	public:
-		std::string new_type;
-		void setZombieType(std::string set_type);
-		Zombie* newZombie(std::string name);
+		static int N;
+		Zombie* array;
+		ZombieHorde(N);
+		~ZombieHorde();
+		void announce();
 };
 
 #endif

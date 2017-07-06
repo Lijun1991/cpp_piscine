@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/05 12:33:50 by lwang             #+#    #+#             */
-/*   Updated: 2017/07/05 12:33:52 by lwang            ###   ########.fr       */
+/*   Created: 2017/07/05 18:47:35 by lwang             #+#    #+#             */
+/*   Updated: 2017/07/05 18:47:37 by lwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
 #include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
 std::string generate_random(int max)
 {
@@ -28,9 +28,8 @@ std::string generate_random(int max)
     return (ramdom_name);
 }
 
-int main(void)
+int main()
 {
-	randomChump(1);
-	randomChump(2);
-	return 0;
+	ZombieHorde zombie_horde;
+	zombie_horde.announce();
 }
