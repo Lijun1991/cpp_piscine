@@ -14,7 +14,6 @@
 #define ZOMBIE_HPP
 
 #include <iostream>
-#include "ZombieHorde.hpp"
 
 class Zombie {
 	public:

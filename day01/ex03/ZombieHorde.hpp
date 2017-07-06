@@ -18,9 +18,9 @@
 
 class ZombieHorde {
 	public:
-		static int N;
+		static int Count;
 		Zombie* array;
-		ZombieHorde(N);
+		ZombieHorde(int N);
 		~ZombieHorde();
 		void announce();
 };

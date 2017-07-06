@@ -19,17 +19,18 @@ std::string generate_random(int max)
 	int random_integer1;
 	int random_integer2;
 
-	srand((unsigned)time(0)); 
     random_integer1 = (rand()%max)+1;
-    srand((unsigned)time(0)); 
     random_integer2 = (rand()%max)+1;
 
     std::string ramdom_name (name, random_integer1, random_integer2);
     return (ramdom_name);
 }
 
+/*change integer N to generate differnt amount of Zombies*/
+
 int main()
 {
-	ZombieHorde zombie_horde;
+	srand((unsigned)time(0)); 
+	ZombieHorde zombie_horde(10);
 	zombie_horde.announce();
 }

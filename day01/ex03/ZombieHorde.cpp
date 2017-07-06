@@ -13,18 +13,19 @@
 #include "Zombie.hpp"
 #include "ZombieHorde.hpp"
 
-int ZombieHorde::N = 10;
+int ZombieHorde::Count;
 
 ZombieHorde::ZombieHorde(int N){
 	this->array = new Zombie[N];
+	Count = N;
 }
 
 ZombieHorde::~ZombieHorde(){
-	delete this->array;
+	delete [] this->array;
 }
 
 void	ZombieHorde::announce(void){
-	for (int i; i < N; i++){
+	for (int i = 0; i < Count; i++){
 		array[i].announce();
 	}
 }
