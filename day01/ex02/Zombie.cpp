@@ -15,12 +15,12 @@
 
 Zombie::Zombie(std::string name){
 	std::string type ("walker");
-
+	// std::cout << type << std::endl;
 	std::string new_name (name);
+	// std::cout << new_name << std::endl;
 }
 
 void	Zombie::announce(void){
-	// std::cout << new_name << std::endl;
-	std::cout << "<" << this->new_name << "(" << this->type << ")> Braiiiiiiinnnssss..." 
+	std::cout << "<" << new_name << "(" << type << ")> Braiiiiiiinnnssss..." 
 	<< std::endl;
 }

@@ -17,15 +17,15 @@ int main(void)
 {
 	ZombieEvent zombie_event;
 	Zombie* newZom;
-	Zombie zombie1(randomChump());
+	Zombie zombie1(randomChump(10));
 	zombie1.announce();
-	newZom = zombie_event.newZombie(randomChump());
+	zombie_event.setZombieType("runner");
+	newZom = zombie_event.newZombie(randomChump(6));
 	newZom->announce();
 	// std::cout << randomChump() << std::endl;
-	zombie_event.setZombieType("runner");
 
-	std::cout << "created zombie1 and 2 with radome name" << std::endl;
-	std::cout << "destroy..." << std::endl;
+	// std::cout << "created zombie1 and 2 with radome name" << std::endl;
+	// std::cout << "destroy..." << std::endl;
 
 	delete newZom;
 	return 0;

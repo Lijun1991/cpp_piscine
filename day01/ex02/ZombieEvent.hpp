@@ -23,6 +23,6 @@ class ZombieEvent {
 		Zombie* newZombie(std::string name);
 };
 
-std::string randomChump(void);
+std::string randomChump(int max);
 
 #endif

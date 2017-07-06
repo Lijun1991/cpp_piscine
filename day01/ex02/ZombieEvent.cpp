@@ -28,15 +28,16 @@ void	ZombieEvent::setZombieType(std::string set_type)
 	std::string type (set_type);
 }
 
-std::string randomChump(void)
+std::string randomChump(int max)
 {
 	std::string name ("abcdefghijklmnop");
 	int random_integer1;
 	int random_integer2;
 
 	srand((unsigned)time(0)); 
-    random_integer1 = (rand()%10)+1;
-    random_integer2 = (rand()%10)+1;
+    random_integer1 = (rand()%max)+1;
+    srand((unsigned)time(0)); 
+    random_integer2 = (rand()%max)+1;
 
   	// std::cout << "random" << random_integer1 << std::endl;
     std::string ramdom_name (name, random_integer1, random_integer2);
