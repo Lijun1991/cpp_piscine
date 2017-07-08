@@ -15,10 +15,11 @@
 
 #include <iostream>
 #include <string>
-#include "FragTrap.hpp"
+// #include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
 
-class ScavTrap : public FragTrap {
+class ScavTrap : public ClapTrap {
 public:
 	ScavTrap();
 	ScavTrap(const std::string Name_input);
@@ -28,8 +29,6 @@ public:
 	void challengeNewcomer();
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 
 private:
 	std::string Name;

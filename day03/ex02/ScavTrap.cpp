@@ -70,19 +70,3 @@ void ScavTrap::challengeNewcomer(void){
 	std::cout << "ScavTrap" << this->Name << " start " << challenges[random_integer1]
 	<< std::endl;
 }
-
-void ScavTrap::takeDamage(unsigned int amount){
-	std::cout << this->Name << " take damage of amount " << amount << std::endl;
-	this->Hit_points -= (amount - this->Armor_damage_reduction);
-	if (this->Hit_points < 0)
-		this->Hit_points = 0;
-	std::cout << "new Hit_points is " << this->Hit_points << std::endl;
-}
-
-void ScavTrap::beRepaired(unsigned int amount){
-	std::cout << this->Name << " be repaired of amount " << amount << std::endl;
-	this->Hit_points += amount;
-	if (this->Hit_points > 100)
-		this->Hit_points = 100;
-	std::cout << "new Hit_points is " << this->Hit_points << std::endl;
-}

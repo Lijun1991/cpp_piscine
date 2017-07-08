@@ -64,34 +64,6 @@ FragTrap & FragTrap::operator=(const FragTrap & obj){
 	return (*this);
 }
 
-void FragTrap::rangedAttack(std::string const & target){
-	std::cout << "FR4G-TP " << this->Name << " attacks " << target 
-	<< " at range, causing " << this->Ranged_attack_damage << " points of damage !"
-	<< std::endl;
-}
-
-void FragTrap::meleeAttack(std::string const & target){
-	std::cout << "FR4G-TP" << this->Name << " attacks " << target 
-	<< " at melee, causing " << this->Melee_attack_damage << " points of damage !"
-	<< std::endl;
-}
-
-void FragTrap::takeDamage(unsigned int amount){
-	std::cout << this->Name << " take damage of amount " << amount << std::endl;
-	this->Hit_points -= (amount - this->Armor_damage_reduction);
-	if (this->Hit_points < 0)
-		this->Hit_points = 0;
-	std::cout << "new Hit_points is " << this->Hit_points << std::endl;
-}
-
-void FragTrap::beRepaired(unsigned int amount){
-	std::cout << this->Name << " be repaired of amount " << amount << std::endl;
-	this->Hit_points += amount;
-	if (this->Hit_points > 100)
-		this->Hit_points = 100;
-	std::cout << "new Hit_points is " << this->Hit_points << std::endl;
-}
-
 void FragTrap::vaulthunter_dot_exe(std::string const & target){
 	int random_integer1 = (rand()%4)+1;
 	std::cout << "FR4G-TP" << this->Name << " use " << attacks[random_integer1]

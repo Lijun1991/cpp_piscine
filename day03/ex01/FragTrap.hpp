@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/07 13:52:47 by lwang             #+#    #+#             */
-/*   Updated: 2017/07/07 13:52:50 by lwang            ###   ########.fr       */
+/*   Created: 2017/07/07 13:59:49 by lwang             #+#    #+#             */
+/*   Updated: 2017/07/07 13:59:52 by lwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
 #include <iostream>
 #include <string>
-#include "FragTrap.hpp"
 
-
-class ScavTrap : public FragTrap {
-public:
-	ScavTrap();
-	ScavTrap(const std::string Name_input);
-	ScavTrap(const ScavTrap &frag);
-	ScavTrap & operator=(const ScavTrap & obj);
-	~ScavTrap();
-	void challengeNewcomer();
-	void rangedAttack(std::string const & target);
-	void meleeAttack(std::string const & target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-
+class FragTrap {
 private:
 	std::string Name;
 	int Hit_points;
@@ -41,7 +27,22 @@ private:
 	int Melee_attack_damage;
 	int Ranged_attack_damage;
 	int Armor_damage_reduction;
+
+	void vaulthunter_dot_exe(std::string const & target);
+public:
+	FragTrap();
+	FragTrap(const std::string Name_input);
+	~FragTrap(void);
+	FragTrap(const FragTrap &frag);
+	FragTrap & operator=(const FragTrap & obj);
+
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
+	void rangedAttack(std::string const & target);
+	void meleeAttack(std::string const & target);
+
+	static char attacks[6][20];
+
 };
 
 #endif
-

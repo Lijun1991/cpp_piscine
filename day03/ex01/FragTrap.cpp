@@ -42,12 +42,12 @@ FragTrap::FragTrap(const std::string Name_input)
 
 FragTrap::FragTrap(const FragTrap &frag)
 	: Name (frag.Name) {
-	std::cout << "copy constructor called" << std::endl;
+	std::cout << "FragTrap copy constructor called" << std::endl;
 	*this = frag;
 }
 
 FragTrap::~FragTrap(void){
-	std::cout << "destructor called" << std::endl;
+	std::cout << "FragTrap destructor called" << std::endl;
 }
 
 FragTrap & FragTrap::operator=(const FragTrap & obj){
