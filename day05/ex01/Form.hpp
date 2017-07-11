@@ -13,7 +13,13 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 
-class Form : public Bureaucrat {
+#include "Form.hpp"
+#include "Bureaucrat.hpp"
+#include <iostream>
+
+class Bureaucrat;
+
+class Form {
 private:
 	const std::string Name;
 	const int grade_sign;
@@ -21,40 +27,35 @@ private:
 	bool it_signed;
 
 public:
+	Form();
+	Form(const std::string Name_input, int input_grade_sign, int input_grade_exe);
+	~Form(void);
+	Form(const Form &f);
+	Form & operator=(const Form & obj);
+
+	struct GradeTooHighException : public std::exception{
+		const char * what() const throw () {
+		return "grade is getting too high";
+		}
+	};
+	struct GradeTooLowException : public std::exception{
+		const char * what() const throw () {
+		return "grade is getting too low";
+		}
+	};
+
+	std::string getName()const;
+	int get_grade_sign()const;
+	int get_grade_exe()const;
 	void beSigned(Bureaucrat& f);
-	void signForm(Bureaucrat& f);
-
-
-// 	std::string getName();
-// 	int getGrade();
-// 	struct GradeTooHighException : public std::exception{
-// 		const char * what() const throw () {
-// 		return "grade is getting too high";
-// 		}
-// 	};
-// 	struct GradeTooLowException : public std::exception{
-// 		const char * what() const throw () {
-// 		return "grade is getting too low";
-// 		}
-// 	};
 
 };
 
+std::ostream & operator<<(std::ostream & p_ostream, Form const & Form);
+
 #endif
 
-Form::beSigned(Bureaucrat& f){
-	if (f.getGrade() < 10)
-		this->grade_sign = true;
-	else
-		throw f.GradeTooLowException();
-}
 
-Form::signForm(Bureaucrat& f){
-	if (grade_sign)
-		std::cout << f.getName() << " bureaucrat signs " << getName() << std::endl;
-	else{
-		std::cout << f.getName() << " bureaucrat cannot sign " 
-		<< getName() << "because" << std::endl;
-	}
-}
+
+
 

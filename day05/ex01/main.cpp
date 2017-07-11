@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <stdexcept>
 
 int main(void)
 {
-	Bureaucrat Burea("name1", 140);
+	Bureaucrat Burea("b_name1", 120);
 	Bureaucrat Burea_cpy1(Burea);
+	Form form("f_name1", 10, 11);
+	Form form_cpy1(form);
 
 	try {
-		std::cout << Burea_cpy1.getName() << " bureaucrat is current at grade " << Burea_cpy1.getGrade() << std::endl;
-		Burea_cpy1.increment_grade(20);
-		std::cout << Burea_cpy1.getName() << " bureaucrat is current at grade " << Burea_cpy1.getGrade() << std::endl;
-		Burea_cpy1.decrement_grade(150);
-		std::cout << Burea_cpy1.getName() << " bureaucrat is current at grade " << Burea_cpy1.getGrade() << std::endl;
+		std::cout << Burea_cpy1;
+		Burea_cpy1.signForm(form_cpy1);
+		std::cout << form_cpy1;
 	}
 	catch (std::exception& e){
 		std::cout << e.what() << std::endl;

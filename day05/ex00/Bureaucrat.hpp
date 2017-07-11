@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <string>
 
 class Bureaucrat {
 public:
@@ -27,8 +28,8 @@ public:
 	const std::string Name;
 	int	grade;
 
-	std::string getName();
-	int getGrade();
+	std::string getName() const;
+	int getGrade() const;
 	void increment_grade(int add);
 	void decrement_grade(int deduct);
 	struct GradeTooHighException : public std::exception{
@@ -42,6 +43,8 @@ public:
 		}
 	};
 };
+
+std::ostream & operator<<(std::ostream & p_ostream, Bureaucrat const & p_bureaucrat);
 
 #endif
 

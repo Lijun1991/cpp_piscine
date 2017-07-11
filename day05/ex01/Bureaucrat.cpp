@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void) : Name(""), grade(1){
 	std::cout << "Bureaucrat constructor called" << std::endl;
@@ -49,22 +50,28 @@ void Bureaucrat::decrement_grade(int deduct){
 		this->grade -= deduct;
 }
 
-std::string Bureaucrat::getName(){
+std::string Bureaucrat::getName()const {
 	return (this->Name);
 }
 
-int Bureaucrat::getGrade(){
+int Bureaucrat::getGrade() const{
 	return (this->grade);
 }
 
-// struct Bureaucrat::GradeTooHighException : public std::exception{
-// 	const char * what() const throw () {
-// 	return "grade is getting too high";
-// 	}
-// };
+std::ostream & operator<<(std::ostream & p_ostream, Bureaucrat const & p_bureaucrat)
+{
+	p_ostream << p_bureaucrat.getName() << ", bureaucrat grade " << p_bureaucrat.getGrade() << std::endl;
+	return p_ostream;
+}
 
-// struct Bureaucrat::GradeTooLowException : public std::exception{
-// 	const char * what() const throw () {
-// 	return "grade is getting too low";
-// 	}
-// };
+void Bureaucrat::signForm(Form & f){
+	if (grade <= f.get_grade_sign())
+		std::cout << *this << " signs " << f << std::endl;
+	else{
+		std::cout << *this << " cannot sign " 
+		<< f << "because grade is too low" << std::endl;
+	}
+	f.beSigned(*this);
+}
+
+
