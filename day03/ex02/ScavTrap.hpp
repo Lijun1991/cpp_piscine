@@ -15,7 +15,6 @@
 
 #include <iostream>
 #include <string>
-// #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 
 
@@ -29,17 +28,6 @@ public:
 	void challengeNewcomer();
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
-
-private:
-	std::string Name;
-	int Hit_points;
-	int Max_hit_points;
-	int Energy_points;
-	int Max_energy_points;
-	int Level;
-	int Melee_attack_damage;
-	int Ranged_attack_damage;
-	int Armor_damage_reduction;
 };
 
 #endif

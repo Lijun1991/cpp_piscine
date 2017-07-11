@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/07 17:03:33 by lwang             #+#    #+#             */
-/*   Updated: 2017/07/07 17:03:35 by lwang            ###   ########.fr       */
+/*   Created: 2017/07/07 22:58:44 by lwang             #+#    #+#             */
+/*   Updated: 2017/07/07 22:58:48 by lwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-#define NINJATRAP_HPP
+#ifndef SUPERTRAP_HPP
+#define SUPERTRAP_HPP
 
 #include <iostream>
 #include <string>
@@ -20,18 +20,18 @@
 #include "ScavTrap.hpp"
 
 
-class NinjaTrap : public ClapTrap {
+class SuperTrap : public FragTrap, public NinjaTrap {
 public:
-	NinjaTrap();
-	NinjaTrap(const std::string Name_input);
-	NinjaTrap(const NinjaTrap &frag);
-	NinjaTrap & operator=(const NinjaTrap & obj);
-	~NinjaTrap();
-
-	void ninjaShoebox(NinjaTrap & tar);
-	void ninjaShoebox(FragTrap & tar);
-	void ninjaShoebox(ScavTrap & tar);
-
+	SuperTrap();
+	SuperTrap(const std::string Name_input);
+	SuperTrap(const SuperTrap &frag);
+	SuperTrap & operator=(const SuperTrap & obj);
+	~SuperTrap();
 };
 
 #endif
+
+
+SuperTrap::SuperTrap(void){
+	
+}

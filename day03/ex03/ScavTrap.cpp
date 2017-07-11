@@ -12,7 +12,7 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap("", 100, 100, 50, 50, 1, 20, 15, 3){
+ScavTrap::ScavTrap(void) : ClapTrap("", 100, 100, 50, 50, 1, 20, 15, 3) {
 	std::cout << "ScavTrap, constructor called" << std::endl;
 }
 

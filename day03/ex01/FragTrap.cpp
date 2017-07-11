@@ -17,27 +17,28 @@ char FragTrap::attacks[6][20] = {"funny attack 1...", "funny attack 2...",
 
 FragTrap::FragTrap(void){
 	std::cout << "FragTrap constructor called" << std::endl;
-	Hit_points = 100;
-	Max_hit_points = 100;
-	Energy_points = 100;
-	Max_energy_points = 100;
-	Level = 1;
-	Melee_attack_damage = 30;
-	Ranged_attack_damage = 20;
-	Armor_damage_reduction = 5;
+	ClapTrap();
+	// Hit_points = 100;
+	// Max_hit_points = 100;
+	// Energy_points = 100;
+	// Max_energy_points = 100;
+	// Level = 1;
+	// Melee_attack_damage = 30;
+	// Ranged_attack_damage = 20;
+	// Armor_damage_reduction = 5;
 }
 
-FragTrap::FragTrap(const std::string Name_input)
-	: Name (Name_input) {
+FragTrap::FragTrap(const std::string Name_input){
 	std::cout << "FragTrap constructor called, the name is " << Name_input << std::endl;
-	Hit_points = 100;
-	Max_hit_points = 100;
-	Energy_points = 100;
-	Max_energy_points = 100;
-	Level = 1;
-	Melee_attack_damage = 30;
-	Ranged_attack_damage = 20;
-	Armor_damage_reduction = 5;
+	ClapTrap(Name_input, 100, 100, 100, 100, 1, 30, 20, 5);
+	// Hit_points = 100;
+	// Max_hit_points = 100;
+	// Energy_points = 100;
+	// Max_energy_points = 100;
+	// Level = 1;
+	// Melee_attack_damage = 30;
+	// Ranged_attack_damage = 20;
+	// Armor_damage_reduction = 5;
 }
 
 FragTrap::FragTrap(const FragTrap &frag)

@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/07 15:15:44 by lwang             #+#    #+#             */
-/*   Updated: 2017/07/07 15:15:46 by lwang            ###   ########.fr       */
+/*   Created: 2017/07/07 21:20:29 by lwang             #+#    #+#             */
+/*   Updated: 2017/07/07 21:20:31 by lwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
-#include <iostream>
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
-int main()
-{
+int main(void){
+
 	srand((unsigned)time(0)); 
 
 	FragTrap F1("aaa");
@@ -36,9 +36,26 @@ int main()
 	Trap.challengeNewcomer();
 
 	ClapTrap Clap;
-	ScavTrap Scav;
+	ScavTrap Scav("hello");
 	Clap.rangedAttack("123");
 	Scav.rangedAttack("456");
 
-	return (0);
+	std::cout << std::endl << "NinjaTrap is doing somthing fun here !" << std::endl;
+	NinjaTrap nin("Ninjia");
+	NinjaTrap nin2(nin);
+
+	nin.rangedAttack("Dr Zed");
+	nin.meleeAttack("Dr Zed");
+	nin.takeDamage(20);
+	nin.takeDamage(100);
+	nin.beRepaired(30);
+	nin.beRepaired(80);
+
+	F1.rangedAttack("ttt");
+	Scav.rangedAttack("ttt");
+	nin.rangedAttack("ttt");
+
+	nin.ninjaShoebox(F1);
+	nin.ninjaShoebox(Scav);
+	nin.ninjaShoebox(nin);
 }

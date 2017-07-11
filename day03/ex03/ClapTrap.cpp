@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(void){
 }
 
 ClapTrap::~ClapTrap(void){
-	std::cout << "ClapTrap, destructor called" << std::endl;
+	std::cout << "ClapTrap, the destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string Name_input, int v_Hit_points, int v_Max_hit_points, int v_Energy_points, 
@@ -34,7 +34,7 @@ ClapTrap::ClapTrap(std::string Name_input, int v_Hit_points, int v_Max_hit_point
 	Name (Name_input), Hit_points (v_Hit_points), Max_hit_points (v_Max_hit_points), Energy_points (v_Energy_points), 
 	Max_energy_points (v_Max_energy_points), Level (v_Level), Melee_attack_damage (v_Melee_attack_damage), 
 	Ranged_attack_damage (v_Ranged_attack_damage), Armor_damage_reduction (v_Armor_damage_reduction){
-	std::cout << "ClapTrap, constructor called" << std::endl;
+	std::cout << "ClapTrap parameter, constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &Clap){

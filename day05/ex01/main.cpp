@@ -5,28 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/07 13:59:58 by lwang             #+#    #+#             */
-/*   Updated: 2017/07/07 14:00:00 by lwang            ###   ########.fr       */
+/*   Created: 2017/07/10 12:22:46 by lwang             #+#    #+#             */
+/*   Updated: 2017/07/10 12:22:47 by lwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "Bureaucrat.hpp"
+#include <stdexcept>
 
 int main(void)
 {
-	srand((unsigned)time(0)); 
-   
-	FragTrap F1("aaa");
-	FragTrap F2(F1);
-	F1.rangedAttack("bbb");
-	F1.meleeAttack("bbb");
-	F1.takeDamage(20);
-	F1.takeDamage(100);
-	F1.beRepaired(30);
-	F1.beRepaired(80);
+	Bureaucrat Burea("name1", 140);
+	Bureaucrat Burea_cpy1(Burea);
 
-	for (int i = 0; i < 5; i ++)
-		F1.vaulthunter_dot_exe("bbb");
+	try {
+		std::cout << Burea_cpy1.getName() << " bureaucrat is current at grade " << Burea_cpy1.getGrade() << std::endl;
+		Burea_cpy1.increment_grade(20);
+		std::cout << Burea_cpy1.getName() << " bureaucrat is current at grade " << Burea_cpy1.getGrade() << std::endl;
+		Burea_cpy1.decrement_grade(150);
+		std::cout << Burea_cpy1.getName() << " bureaucrat is current at grade " << Burea_cpy1.getGrade() << std::endl;
+	}
+	catch (std::exception& e){
+		std::cout << e.what() << std::endl;
+	}
+
 
 	return (0);
 }
