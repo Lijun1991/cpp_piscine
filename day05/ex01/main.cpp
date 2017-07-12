@@ -17,18 +17,16 @@ int main(void)
 {
 	Bureaucrat Burea("b_name1", 120);
 	Bureaucrat Burea_cpy1(Burea);
-	Form form("f_name1", 10, 11);
+	Form form("f_name1", 10, 120);
 	Form form_cpy1(form);
 
 	try {
 		std::cout << Burea_cpy1;
 		Burea_cpy1.signForm(form_cpy1);
-		std::cout << form_cpy1;
 	}
 	catch (std::exception& e){
 		std::cout << e.what() << std::endl;
 	}
-
 
 	return (0);
 }

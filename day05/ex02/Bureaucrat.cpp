@@ -74,4 +74,7 @@ void Bureaucrat::signForm(Form & f){
 	f.beSigned(*this);
 }
 
-
+void Bureaucrat::executeForm(Form & f){
+	if (grade > f.get_grade_exe())
+		throw GradeTooLowException();
+}
