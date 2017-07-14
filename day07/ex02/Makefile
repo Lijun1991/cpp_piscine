@@ -10,18 +10,18 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex02
 
-SRC = iter.cpp 
+SRC = main.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 .PHONY: all clean fclean re
 
 $(NAME): $(OBJ)
-	g++ $(CFLAGS) -o $(NAME) $(OBJ)
+	g++ $(CFLAGS) -o $(NAME) $(OBJ) -IArray.hpp
 
 all: $(NAME)
 
