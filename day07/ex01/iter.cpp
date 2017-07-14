@@ -14,7 +14,8 @@
 #include <string>
 
 template <typename T>
-void iter(T *arr, size_t length, void (*func)(T const &)){ 
+void iter(T *arr, size_t length, void (*func)(T const &))
+{ 
     if (!arr)
     	return ;
     for (size_t i = 0; i < length; i++)
@@ -23,14 +24,23 @@ void iter(T *arr, size_t length, void (*func)(T const &)){
     }
 }
 
-void print_String(std::string const str)
+void print_String(std::string const & str)
 {
 	std::cout << str << std::endl;
+}
+
+void print_int(int const & i)
+{
+    std::cout << i << std::endl;
 }
 
 int main( void ) 
 { 
 	std::string array_string[] = {"hello", "hello1", "hello2", "hello3", "hello4"};
 	iter(array_string, 5, print_String);
+
+    int int_array[] = {1, 2, 3, 4, 5};
+    iter(int_array, 5, print_int);
+
     return 0; 
 }
