@@ -11,16 +11,20 @@
 /* ************************************************************************** */
 
 #include "span.hpp"
+#include <algorithm>
+#include <iostream>
+#include <stdexcept>
+#include <vector>
 
 unsigned int Span::count = 0;
 
 Span::Span(unsigned int N){
 	_len = N;
 	count = 0;
-	myvector = new int[N];
+	std::vector<int> myvector;
 }
 
-Span::Span(std::vector<int> & obj){
+Span::Span(Span & obj){
 	 *this = obj;
 }
 
@@ -41,14 +45,20 @@ void Span::addNumber(int nbr){
 }
 
 int Span::shortestSpan(){
-	if (count == 1 || !myvector)
+	if (count == 1 || count == 0)
 		throw std::exception();
 	std::sort(myvector.begin(), myvector.end());
-	return ( myvector[1] - myvector[0]);
+	std::vector<int> spans;
+	for (int i = 0; i < myvector.size() - 2; i++){
+		spans.push_back(myvector[i + 1] - myvector[i]);
+	}
+	std::sort(spans.begin(), spans.end());
+	std::vector<int>::iterator it = spans.begin();
+	return (*it);
 }
 
 int Span::longestSpan(){
-	if (count == 1 || !myvector)
+	if (count == 1 || count == 0)
 		throw std::exception();
 	std::sort(myvector.begin(), myvector.end());
 	return (myvector[myvector.size() - 1] - myvector[0]);

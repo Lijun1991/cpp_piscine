@@ -16,7 +16,6 @@
 #include <iostream>
 #include <stdexcept>
 #include <vector>
-#include <sort>
 
 class Span
 {
@@ -27,7 +26,7 @@ class Span
   public:
   	static unsigned int count;
     Span(unsigned int N);
-    Span(std::vector<int> & obj);
+    Span(Span & obj);
     ~Span(void);
     Span & operator=(Span const & obj);
 
