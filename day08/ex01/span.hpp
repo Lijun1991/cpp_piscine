@@ -22,11 +22,12 @@ class Span
   private:
     std::vector<int> myvector;
     unsigned int _len;
+    unsigned int count;
 
   public:
-  	static unsigned int count;
+    Span(void);
     Span(unsigned int N);
-    Span(Span & obj);
+    Span(Span const & obj);
     ~Span(void);
     Span & operator=(Span const & obj);
 

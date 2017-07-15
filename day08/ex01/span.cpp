@@ -16,7 +16,10 @@
 #include <stdexcept>
 #include <vector>
 
-unsigned int Span::count = 0;
+Span::Span(void){
+	count = 0;
+	return ;
+}
 
 Span::Span(unsigned int N){
 	_len = N;
@@ -24,11 +27,13 @@ Span::Span(unsigned int N){
 	std::vector<int> myvector;
 }
 
-Span::Span(Span & obj){
+Span::Span(Span const & obj){
 	 *this = obj;
+	 return ;
 }
 
 Span::~Span(void){
+	return ;
 }
 
 Span & Span::operator=(Span const & obj){
@@ -45,7 +50,7 @@ void Span::addNumber(int nbr){
 }
 
 int Span::shortestSpan(){
-	if (count == 1 || count == 0)
+	if (count == 0 || count == 1)
 		throw std::exception();
 	std::sort(myvector.begin(), myvector.end());
 	std::vector<int> spans;
@@ -58,8 +63,10 @@ int Span::shortestSpan(){
 }
 
 int Span::longestSpan(){
-	if (count == 1 || count == 0)
+	if (count == 0 || count == 1)
 		throw std::exception();
-	std::sort(myvector.begin(), myvector.end());
-	return (myvector[myvector.size() - 1] - myvector[0]);
+	else{
+		std::sort(myvector.begin(), myvector.end());
+		return (myvector[myvector.size() - 1] - myvector[0]);
+	}
 }
