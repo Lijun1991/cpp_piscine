@@ -14,14 +14,14 @@
 
 int main() {
     try {
-        // Array of ints
+        // Array of ints with 5 members
         Array<int> intArray(5); 
         for (int i = 0; i < 5; i++){
             intArray[i] = i;
         }
         std::cout << intArray[4] << std::endl;
 
-        // Array of strings
+        // Array of strings with 4 members
         Array<std::string> stringArray(4); 
         stringArray[0] = "hello";
         stringArray[1] = "hello1";
