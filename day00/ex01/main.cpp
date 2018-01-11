@@ -16,9 +16,6 @@ int main(void)
 {
 	contact contact;
 	char command[10];
-	char info[13][20] = {"first name: ", "last name: ", "nickname: ", "login: ", 
-	"postal address: ", "email address: ", "phone number: ", "birthday date: ",
-	"favorite meal: ", "underwear color: ", "darkest secret: "};
 	while (1)
 	{
 		std::cin >> command;
@@ -29,7 +26,11 @@ int main(void)
 			if (contact::Count_contact <= 7)
 			{
 				std::cout << "Please enter new contact infomation: " << std::endl;
-				contact.add(info);
+				contact.add();
+			}
+			else
+			{
+				std::cout << "Phonebook can’t store more than 8 contacts." << std::endl;
 			}
 		}
 		else if (!strcmp(command, "SEARCH"))

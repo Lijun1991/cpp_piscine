@@ -26,19 +26,23 @@ class contact{
 			return Count_contact;
 		}
 		char array[9][12][255];
-		void add(char info[13][20]);
 		void search();
+		static char info[11][20];
+		void add();
 };
 
 int contact::Count_contact = 0;
 
-std::string array[9][12][255];
+char contact::info[11][20] = {"first name: ", "last name: ", "nickname: ", "login: ", 
+		"postal address: ", "email address: ", "phone number: ", "birthday date: ",
+		"favorite meal: ", "underwear color: ", "darkest secret: "};
 
-void contact::add(char info[13][20])
+void contact::add()
 {
 	char input[255];
+
 	for (int i = 0; i < 11; i++){
-		std::cout << info[i];
+		std::cout << info[i] << std::endl;
 		std::cin >> input;
 		strcpy(array[Count_contact][i], input);
 	}
