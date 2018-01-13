@@ -28,10 +28,10 @@ int main(){
     // mvaddch(6, 5, '@');
 
     for (int i = 0; i < 50; i++){
-        randam_enemies_x = rand() % 50 + 1;
+        randam_enemies_x = rand() % 30 + 3;
         randam_enemies_y = rand() % 3 + 1;
         attron(A_STANDOUT | A_UNDERLINE);
-        mvprintw(randam_enemies_y, randam_enemies_x, "S ");
+        mvprintw(randam_enemies_y, randam_enemies_x, "@");
         attroff(A_STANDOUT | A_UNDERLINE);
     }
 
